@@ -7,8 +7,14 @@ const skills = [
     module.exports = {
         getAll,
         getOne,
-        create
+        create,
+        deleteOne
     }; 
+
+    function deleteOne(id){
+        const idx = skills.findIndex(skill => skill.id === parseInt(id));
+        skills.splice(idx, 1);
+    }
     
     function create(skill) {
         // console.log(req.body, "<--- will be the contents of the form");
